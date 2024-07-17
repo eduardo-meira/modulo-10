@@ -1,21 +1,20 @@
-$(document).ready(function () {
-    $('#carousel-imagens').slick({
-        autoplay: true,
-    })
+    $("#carousel-imagens").slick({
+      autoplay: true,
+    });
 
-  $('#telefone').mask('(00) 00000-0000', {
-    placeholder:'(DDD) 12345-6789'
+  $("#telefone").mask("(00) 00000-0000", {
+    placeholder : "(00) 00000-0000"
   });
 
-  $('#cpf').mask('000.000.000-00', {
-    placeholder: '123.456.789-00'
+  $("#cpf").mask("000.000.000-00" , {
+    placeholder : "000.000.000-00"
   });
 
-  $('#cep').mask('00000-000', {
-    placeholder: '012345-678'
+  $("#cep").mask("00000-000" , {
+    placeholder : "CEP 00000-000"
   });
 
-  $('form').validate({
+  $("form").validate({
     rules: {
       nome: {
         required: true,
@@ -39,15 +38,12 @@ $(document).ready(function () {
     },
     submitHandler: function (form) {
       alert(
-        'Sua requisição foi enviada para análise, parabéns pela aquisição!'
+        "Sua requisição foi enviada para análise, parabéns pela aquisição!"
       );
       form.reset();
     },
-    invalidHandler: function (evento, validator) {
-        let = camposIncorretos = validator.numberOfInvalids()
-        if (camposIncorretos) {
-            alert('Por favor, preencha os campos para prosseguir com a compra!');
-        }
+    invalidHandler: function (form, validator) {
+      alert("Por favor, preencha os campos para prosseguir com a compra!");
     },
   });
-});
+
